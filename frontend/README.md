@@ -1,169 +1,177 @@
-# Pet Shop Management System (C4P)
+# Sistema de Pet Shop - Projeto ADS
 
-Sistema de gerenciamento para pet shops desenvolvido em React com TypeScript, Bootstrap e Vite.
+Este projeto é um sistema completo para gerenciamento de um Pet Shop, desenvolvido para a disciplina de Programação Orientada a Objetos. Ele permite o cadastro e controle de clientes, pets, produtos, serviços e vendas, com interface web moderna e API RESTful.
 
-## 📦 Pré-requisitos
+---
 
-Antes de começar, certifique-se de ter instalado:
+## Sumário
 
-- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Pré-requisitos](#pré-requisitos)
+- [Como Rodar o Projeto](#como-rodar-o-projeto)
+  - [1. Backend](#1-backend)
+  - [2. Frontend](#2-frontend)
+- [Como Usar](#como-usar)
+- [Estrutura das Pastas](#estrutura-das-pastas)
+- [Dúvidas Frequentes](#dúvidas-frequentes)
+
+---
+
+## Funcionalidades
+
+- Cadastro, edição e exclusão de clientes, com endereço, telefone e CPF.
+- Cadastro de pets vinculados aos clientes.
+- Cadastro e controle de produtos e serviços.
+- Registro de vendas (consumo), vinculando clientes, pets, produtos e serviços.
+- Listagem detalhada de vendas, clientes e pets.
+- Modal de detalhes para cada entidade.
+- Exclusão de vendas com atualização automática da lista.
+- Interface responsiva e intuitiva.
+
+---
+
+## Tecnologias Utilizadas
+
+- **Frontend:** React + TypeScript + Bootstrap
+- **Backend:** Node.js + Express + (possivelmente SQLite ou outro banco relacional)
+- **API RESTful:** Endpoints para clientes, pets, produtos, serviços, vendas, etc.
+
+---
+
+## Pré-requisitos
+
+- [Node.js](https://nodejs.org/) (v16 ou superior)
 - [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+- (Opcional) [Git](https://git-scm.com/)
 
-## 🔧 Instalação`
+---
 
-**Instale as dependências**
+## Como Rodar o Projeto
+
+### 1. Backend
+
+1. **Acesse a pasta do backend:**
+   ```bash
+   cd backend
+   ```
+
+2. **Instale as dependências:**
    ```bash
    npm install
    ```
-   
-   ou se preferir usar yarn:
+   ou
    ```bash
-   yarn install
+   yarn
    ```
 
-## 🏃‍♂️ Executando o Projeto
+3. **Configure o banco de dados (se necessário):**
+   - O projeto pode já criar o banco automaticamente ao rodar.
+   - Se houver arquivo `.env.example`, copie para `.env` e ajuste as variáveis.
 
-### Modo de Desenvolvimento
+4. **Inicie o servidor:**
+   ```bash
+   npm start
+   ```
+   ou
+   ```bash
+   yarn start
+   ```
 
-Para iniciar o servidor de desenvolvimento, você pode usar qualquer um dos comandos abaixo:
+5. **A API estará disponível em:**  
+   [http://localhost:3001/api](http://localhost:3001/api)
 
-```bash
-npm start
+---
+
+### 2. Frontend
+
+1. **Acesse a pasta do frontend:**
+   ```bash
+   cd frontend
+   ```
+
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+   ou
+   ```bash
+   yarn
+   ```
+
+3. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm start
+   ```
+   ou
+   ```bash
+   yarn start
+   ```
+
+4. **Acesse o sistema no navegador:**  
+   [http://localhost:3000](http://localhost:3000)
+
+---
+
+## Como Usar
+
+1. **Clientes:**  
+   Cadastre clientes com nome, nome social, email, telefone, CPF e endereço.  
+   Edite ou exclua clientes conforme necessário.  
+   Veja detalhes completos no modal, incluindo pets vinculados.
+
+2. **Pets:**  
+   Cadastre pets vinculados a clientes.  
+   Edite ou exclua pets.
+
+3. **Produtos e Serviços:**  
+   Cadastre e gerencie produtos e serviços oferecidos pelo pet shop.
+
+4. **Vendas (Consumo):**  
+   Registre vendas, selecionando cliente, pet, produtos e/ou serviços.  
+   Veja o histórico de vendas, detalhes e exclua vendas se necessário.
+
+5. **Detalhes:**  
+   Use os botões de "Ver Detalhes" para visualizar informações completas de clientes, pets e vendas.
+
+---
+
+## Estrutura das Pastas
+
+```
+T5/
+├── backend/
+│   ├── src/
+│   ├── API_DOCUMENTATION.md
+│   └── ...
+├── frontend/
+│   ├── src/
+│   └── ...
+└── README.md
 ```
 
-ou
+---
 
-```bash
-npm run dev
-```
+## Dúvidas Frequentes
 
-ou se preferir yarn:
+**1. O backend não inicia, o que fazer?**  
+Verifique se as dependências estão instaladas e se a porta 3001 está livre.
 
-```bash
-yarn start
-```
+**2. O frontend não conecta ao backend.**  
+Confirme que o backend está rodando em `http://localhost:3001/api` e que não há bloqueio de CORS.
 
-O aplicativo estará disponível em [http://localhost:5173](http://localhost:5173)
+**3. Como resetar o banco de dados?**  
+Apague o arquivo do banco (ex: `database.sqlite`) na pasta do backend e reinicie o servidor.
 
-### Build para Produção
+**4. Como cadastrar um cliente com telefone, CPF e endereço?**  
+Preencha todos os campos obrigatórios no formulário de cadastro de cliente.
 
-Para criar uma build otimizada para produção:
+---
 
-```bash
-npm run build
-```
+## Contribuição
 
-### Preview da Build
+Este projeto é acadêmico, mas sugestões e melhorias são bem-vindas!
 
-Para visualizar a build de produção localmente:
+---
 
-```bash
-npm run preview
-```
-
-### Linting
-
-Para executar o linter e verificar problemas no código:
-
-```bash
-npm run lint
-```
-## 📋 Funcionalidades
-
-- **Gestão de Clientes**: Cadastro, visualização e busca de clientes
-- **Gestão de Pets**: Registro de pets com informações do dono
-- **Gestão de Produtos**: Controle de estoque e preços de produtos
-- **Gestão de Serviços**: Cadastro de serviços oferecidos (banho, tosa, consultas, etc.)
-- **Controle de Vendas**: Registro e acompanhamento de vendas
-- **Estatísticas**: Dashboard com métricas e relatórios do negócio
-
-## 🚀 Tecnologias Utilizadas
-
-- **React 19** - Biblioteca para interfaces de usuário
-- **TypeScript** - Superset do JavaScript com tipagem estática
-- **Vite** - Build tool e dev server
-- **Bootstrap 5.3** - Framework CSS para estilização
-- **Bootstrap Icons** - Biblioteca de ícones
-- **React Router DOM** - Roteamento para aplicações React
-
-## 📁 Estrutura do Projeto
-
-```
-atvii/
-├── src/
-│   ├── components/          # Componentes React
-│   │   ├── clientes.tsx     # Gestão de clientes
-│   │   ├── pets.tsx         # Gestão de pets
-│   │   ├── produtos.tsx     # Gestão de produtos
-│   │   ├── servicos.tsx     # Gestão de serviços
-│   │   ├── lista-vendas.tsx # Controle de vendas
-│   │   ├── estatisticas.tsx # Dashboard de estatísticas
-│   │   └── home.tsx         # Página inicial
-│   ├── App.tsx              # Componente principal
-│   ├── main.tsx             # Ponto de entrada
-│   └── index.css            # Estilos globais
-├── public/                  # Arquivos públicos
-├── package.json             # Dependências e scripts
-├── tsconfig.json            # Configuração TypeScript
-├── vite.config.ts           # Configuração Vite
-└── README.md                # Este arquivo
-```
-
-## 🎨 Estilização
-
-O projeto utiliza **Bootstrap 5.3** para estilização, proporcionando:
-
-- Design responsivo
-- Componentes pré-estilizados
-- Sistema de grid flexível
-- Tema escuro personalizado
-- Ícones do Bootstrap Icons
-
-## 🔄 Funcionalidades Principais
-
-### Dashboard Principal
-- Visão geral com estatísticas resumidas
-- Navegação rápida para todas as seções
-- Cards informativos com métricas importantes
-
-### Gestão de Clientes
-- Cadastro de novos clientes
-- Busca por nome
-- Visualização de detalhes em modal
-- Informações: nome, email, telefone, CPF, observações
-
-### Gestão de Pets
-- Registro de pets vinculados aos donos
-- Informações: nome, espécie, dono, observações
-- Busca por nome do pet
-
-### Gestão de Produtos
-- Controle de estoque
-- Categorização (alimentação, higiene, acessórios)
-- Preços e quantidades
-- Edição inline via modal
-
-### Gestão de Serviços
-- Cadastro de serviços oferecidos
-- Categorias: higiene, saúde, hospedagem, treinamento, bem-estar
-- Informações de preço e duração
-- Sistema de edição completo
-
-### Controle de Vendas
-- Registro de vendas com múltiplos itens
-- Seleção de cliente e forma de pagamento
-- Cálculo automático de totais
-- Histórico de vendas
-
-### Estatísticas
-- Top clientes por quantidade e valor
-- Itens mais consumidos
-- Análise por tipo e raça de pet
-- Métricas para tomada de decisão
-
-## 🛠️ Scripts Disponíveis
-
-- `npm run dev` - Inicia o servidor de desenvolvimento
-- `npm run build` - Cria build para produção
-- `npm run preview` - Visualiza a build de produção
-- `npm run lint` - Executa verificação de código
+**Desenvolvido para a disciplina de Programação Orientada a Objetos - FATEC.**
