@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './routes';
 import Navbar from './components/NavBar';
@@ -7,16 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Footer from './components/Footer';
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Navbar />
+function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <div className='py-4 bg-dark'>
         <AppRoutes />
-        <Footer />
-      </BrowserRouter>
-    );
-  }
+      </div>
+      <Footer />
+    </BrowserRouter>
+  );
 }
 
 export default App;

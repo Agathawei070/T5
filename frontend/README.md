@@ -1,54 +1,169 @@
-# React + TypeScript + Vite
+# Pet Shop Management System (C4P)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema de gerenciamento para pet shops desenvolvido em React com TypeScript, Bootstrap e Vite.
 
-Currently, two official plugins are available:
+## 📦 Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Antes de começar, certifique-se de ter instalado:
 
-## Expanding the ESLint configuration
+- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔧 Instalação`
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+**Instale as dependências**
+   ```bash
+   npm install
+   ```
+   
+   ou se preferir usar yarn:
+   ```bash
+   yarn install
+   ```
+
+## 🏃‍♂️ Executando o Projeto
+
+### Modo de Desenvolvimento
+
+Para iniciar o servidor de desenvolvimento, você pode usar qualquer um dos comandos abaixo:
+
+```bash
+npm start
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+ou
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+ou se preferir yarn:
+
+```bash
+yarn start
+```
+
+O aplicativo estará disponível em [http://localhost:5173](http://localhost:5173)
+
+### Build para Produção
+
+Para criar uma build otimizada para produção:
+
+```bash
+npm run build
+```
+
+### Preview da Build
+
+Para visualizar a build de produção localmente:
+
+```bash
+npm run preview
+```
+
+### Linting
+
+Para executar o linter e verificar problemas no código:
+
+```bash
+npm run lint
+```
+## 📋 Funcionalidades
+
+- **Gestão de Clientes**: Cadastro, visualização e busca de clientes
+- **Gestão de Pets**: Registro de pets com informações do dono
+- **Gestão de Produtos**: Controle de estoque e preços de produtos
+- **Gestão de Serviços**: Cadastro de serviços oferecidos (banho, tosa, consultas, etc.)
+- **Controle de Vendas**: Registro e acompanhamento de vendas
+- **Estatísticas**: Dashboard com métricas e relatórios do negócio
+
+## 🚀 Tecnologias Utilizadas
+
+- **React 19** - Biblioteca para interfaces de usuário
+- **TypeScript** - Superset do JavaScript com tipagem estática
+- **Vite** - Build tool e dev server
+- **Bootstrap 5.3** - Framework CSS para estilização
+- **Bootstrap Icons** - Biblioteca de ícones
+- **React Router DOM** - Roteamento para aplicações React
+
+## 📁 Estrutura do Projeto
+
+```
+atvii/
+├── src/
+│   ├── components/          # Componentes React
+│   │   ├── clientes.tsx     # Gestão de clientes
+│   │   ├── pets.tsx         # Gestão de pets
+│   │   ├── produtos.tsx     # Gestão de produtos
+│   │   ├── servicos.tsx     # Gestão de serviços
+│   │   ├── lista-vendas.tsx # Controle de vendas
+│   │   ├── estatisticas.tsx # Dashboard de estatísticas
+│   │   └── home.tsx         # Página inicial
+│   ├── App.tsx              # Componente principal
+│   ├── main.tsx             # Ponto de entrada
+│   └── index.css            # Estilos globais
+├── public/                  # Arquivos públicos
+├── package.json             # Dependências e scripts
+├── tsconfig.json            # Configuração TypeScript
+├── vite.config.ts           # Configuração Vite
+└── README.md                # Este arquivo
+```
+
+## 🎨 Estilização
+
+O projeto utiliza **Bootstrap 5.3** para estilização, proporcionando:
+
+- Design responsivo
+- Componentes pré-estilizados
+- Sistema de grid flexível
+- Tema escuro personalizado
+- Ícones do Bootstrap Icons
+
+## 🔄 Funcionalidades Principais
+
+### Dashboard Principal
+- Visão geral com estatísticas resumidas
+- Navegação rápida para todas as seções
+- Cards informativos com métricas importantes
+
+### Gestão de Clientes
+- Cadastro de novos clientes
+- Busca por nome
+- Visualização de detalhes em modal
+- Informações: nome, email, telefone, CPF, observações
+
+### Gestão de Pets
+- Registro de pets vinculados aos donos
+- Informações: nome, espécie, dono, observações
+- Busca por nome do pet
+
+### Gestão de Produtos
+- Controle de estoque
+- Categorização (alimentação, higiene, acessórios)
+- Preços e quantidades
+- Edição inline via modal
+
+### Gestão de Serviços
+- Cadastro de serviços oferecidos
+- Categorias: higiene, saúde, hospedagem, treinamento, bem-estar
+- Informações de preço e duração
+- Sistema de edição completo
+
+### Controle de Vendas
+- Registro de vendas com múltiplos itens
+- Seleção de cliente e forma de pagamento
+- Cálculo automático de totais
+- Histórico de vendas
+
+### Estatísticas
+- Top clientes por quantidade e valor
+- Itens mais consumidos
+- Análise por tipo e raça de pet
+- Métricas para tomada de decisão
+
+## 🛠️ Scripts Disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Cria build para produção
+- `npm run preview` - Visualiza a build de produção
+- `npm run lint` - Executa verificação de código

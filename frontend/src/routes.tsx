@@ -8,17 +8,18 @@ import Consumo from './pages/Consumo';
 import Dashboard from './pages/Home';
 import Estatisticas from './pages/Estatisticas';
 
-const AppRoutes = () => (
-  <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/" element={<Dashboard />} />
-  <Route path="/clientes" element={<Clientes />} />
-  <Route path="/pets" element={<Pets />} />
-  <Route path="/produtos" element={<Produtos />} />
-  <Route path="/servicos" element={<Servicos />} />
-  <Route path="/consumo" element={<Consumo />} />
-  <Route path="/estatisticas" element={<Estatisticas />} />
-  </Routes>
-);
-
+function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/clientes" element={<Clientes />} />
+      <Route path="/pets" element={<Pets />} />
+      <Route path="/produtos" element={<Produtos />} />
+      <Route path="/servicos" element={<Servicos />} />
+      <Route path="/consumo" element={<Consumo />} />
+      <Route path="/estatisticas" element={<Estatisticas />} />
+    </Routes>
+  );
+}
 export default AppRoutes;
