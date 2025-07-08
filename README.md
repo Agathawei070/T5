@@ -33,17 +33,20 @@ Este projeto é um sistema completo para gerenciamento de um Pet Shop, desenvolv
 
 ## Tecnologias Utilizadas
 
-- **Frontend:** React + TypeScript + Bootstrap
-- **Backend:** Node.js + Express + (possivelmente SQLite ou outro banco relacional)
+
+- **Frontend:** React (v18) + TypeScript + Bootstrap
+- **Backend:** Node.js (v18) + Express + MySQL
 - **API RESTful:** Endpoints para clientes, pets, produtos, serviços, vendas, etc.
 
 ---
 
 ## Pré-requisitos
 
-- [Node.js](https://nodejs.org/) (v16 ou superior)
+- [Node.js](https://nodejs.org/) (v18 ou superior)
 - [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 - (Opcional) [Git](https://git-scm.com/)
+- [MySQL](https://www.mysql.com/) (caso utilize o banco relacional padrão do projeto)
+- [React](https://react.dev/) (v18) já incluso nas dependências do frontend
 
 ---
 
@@ -65,11 +68,24 @@ Este projeto é um sistema completo para gerenciamento de um Pet Shop, desenvolv
    yarn
    ```
 
-3. **Configure o banco de dados (se necessário):**
+3. **Configure as variáveis de ambiente**
+
+   Crie um arquivo `.env` na pasta `backend/` com o seguinte conteúdo:
+
+   ```
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=sua_senha_mysql
+   DB_NAME=c4p
+   ```
+
+   > Altere `DB_USER` e `DB_PASSWORD` conforme seu ambiente MySQL.
+
+4. **Configure o banco de dados (se necessário):**
    - O projeto pode já criar o banco automaticamente ao rodar.
    - Se houver arquivo `.env.example`, copie para `.env` e ajuste as variáveis.
 
-4. **Inicie o servidor:**
+5. **Inicie o servidor:**
    ```bash
    npm start
    ```
@@ -78,7 +94,7 @@ Este projeto é um sistema completo para gerenciamento de um Pet Shop, desenvolv
    yarn start
    ```
 
-5. **A API estará disponível em:**  
+6. **A API estará disponível em:**  
    [http://localhost:3001/api](http://localhost:3001/api)
 
 ---
@@ -109,7 +125,7 @@ Este projeto é um sistema completo para gerenciamento de um Pet Shop, desenvolv
    ```
 
 4. **Acesse o sistema no navegador:**  
-   [http://localhost:3000](http://localhost:3000)
+   [http://localhost:5173](http://localhost:5173)
 
 ---
 
